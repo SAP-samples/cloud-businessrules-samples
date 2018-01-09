@@ -1,15 +1,15 @@
 # SAP Cloud Platform Business Rules Sample Projects and Applications
 SAP Cloud Platform Business Rules enables line of business users, application developers to automate decisions in simple human friendly rule language and integrate these decisions via APIs with their cloud applications. 
-You can use the applications and rule projects as reference content to learn more about how to build and consume business rules in cloud
+You can use these sample applications and rule projects as reference content to learn more about how-to build and consume business rules.
 
 ## Solution Diagram
 This diagram shows how you can consume business rules service from workflow, cloud integration and other SAP Cloud solutions. 
 ![Solution Diagram](https://github.com/SAP/cloud-businessrules-samples/blob/master/images/BusinessRules_SolutionDiagram.png)
 
-Beside these, there are many other services which can consume SAP Cloud Platform Business Rules. Shown below is the complete list of various consumption models:
+Beside these, there are many other services which can consume SAP Cloud Platform Business Rules. Below diagram shows a rich list of various consumption models:
 ![Consumption Models](https://github.com/SAP/cloud-businessrules-samples/blob/master/images/BusinessRules_ConsumptionPatterns.png)
 
-### Prerequisites
+## Prerequisites
 You need to have the following:
 1.  SAP Cloud Platform (Neo) account with an active subscription to Business Rules service.Refer [here](https://blogs.sap.com/2017/04/26/sap-cloud-platform-business-rules-try-it-yourself/) for information on getting a free trial account of SAP Cloud Platform and how to enable SAP Cloud Platform Business Rules Service.
 2.  **RuleSuperUser** role for Runtime and Repository operations.
