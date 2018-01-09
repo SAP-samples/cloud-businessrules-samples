@@ -11,14 +11,14 @@ Beside these, there are many other services which can consume SAP Cloud Platform
 
 ### Prerequisites
 You need to have the following:
-1. SAP Cloud Platform (Neo) account with an active subscription to Business Rules service.Refer [here](https://blogs.sap.com/2017/04/26/sap-cloud-platform-business-rules-try-it-yourself/) for information on getting a free trial account of SAP Cloud Platform and how to enable SAP Cloud Platform Business Rules Service.
-2. RuleSuperUser role for Runtime and Repository operations.
-3. Developer role to create and deploy SAPUI5 applications in SAP Cloud Platform.
-4. SAP WebIDE Full-Stack service enabled in SAP Cloud Platform.
+1.  SAP Cloud Platform (Neo) account with an active subscription to Business Rules service.Refer [here](https://blogs.sap.com/2017/04/26/sap-cloud-platform-business-rules-try-it-yourself/) for information on getting a free trial account of SAP Cloud Platform and how to enable SAP Cloud Platform Business Rules Service.
+2.  **RuleSuperUser** role for Runtime and Repository operations.
+3.  **Developer** role to create and deploy SAPUI5 applications in SAP Cloud Platform.
+4.  SAP WebIDE Full-Stack service enabled in SAP Cloud Platform.
 
 ## Repository Overview
 The available samples are of 2 types depending upon the folder containing them. There would be different setup process for each type:
-1. **apps*** - It contains SAPUI5 applications that need to imported from WebIDE and deployed. **shoppingcart** application shows how to consume rule service in custom HTML5 application and **rulesmanager** application shows how to embed SAPUI5 Rules Builder control in your custom application. 
+1. **apps** - It contains SAPUI5 applications that need to imported from WebIDE and deployed. **shoppingcart** application shows how to consume rule service in custom HTML5 application and **rulesmanager** application shows how to embed SAPUI5 Rules Builder control in your custom application. 
 2. **rulesprojects** - It contains business rules projects that need to imported from business rules editor
 
 ## Getting Started
@@ -26,10 +26,10 @@ The available samples are of 2 types depending upon the folder containing them. 
 2. Extract the content into local file system
 
 - From content in **apps** folder:
-	3. Open SAP Web IDE Full-Stack and import the project zip using File --> Import --> From File System option.
+  - Open SAP Web IDE Full-Stack and import the project zip using File --> Import --> From File System option.
 
 - From content in **rulesproject** folder:
-	4. Open Business Rules Editor and import the project using the Import button on the Manage Projects screen
+  - Open Business Rules Editor and import the project using the Import button on the Manage Projects screen
 
 ## Authors
 Archana Shukla
