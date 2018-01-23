@@ -19,7 +19,7 @@ You need to have the following:
 ## Repository Overview
 The available samples are of 2 types depending upon the folder containing them. There would be different setup process for each type:
 1. **apps** - It contains SAPUI5 applications that need to imported from WebIDE and deployed. **shoppingcart** application shows how to consume rule service in custom HTML5 application and **rulesmanager** application shows how to embed SAPUI5 Rules Builder control in your custom application. 
-2. **rulesprojects** - It contains business rules projects that need to imported from business rules editor
+2. **rulesprojects** - It contains sample business rules projects that shows rules capabilities through different use cases
 
 ## Getting Started
 1. Download the content from the git: https://github.com/SAP/cloud-businessrules-samples
@@ -29,7 +29,7 @@ The available samples are of 2 types depending upon the folder containing them. 
   - Open SAP Web IDE Full-Stack and import the project zip using File --> Import --> From File System option.
 
 - From content in **rulesproject** folder:
-  - Open Business Rules Editor and import the project using the Import button on the Manage Projects screen
+  - Open Business Rules Editor and import the project using the **Import** button on the Manage Projects screen
 
 ## Authors
 Archana Shukla
