@@ -15,16 +15,16 @@ To make this sample application work, please make sure you have:
 
 ## Running the Application in Cloud Foundry Environment
 
-#1. Download the Shopping Cart Application
+# 1. Download the Shopping Cart Application
 Download and extract the shopping cart application under *cf-apps* folder
 
-#2. Adding required security libraries
+# 2. Adding required security libraries
 
 To secure the application we have to add Spring Security to the classpath. By configuring Spring Security in the application, Spring Boot automatically secures all HTTP endpoints with BASIC authentication. Since we want to use OAuth 2.0 together with [Java Web Tokens (JWT)](https://tools.ietf.org/html/rfc7519) instead, we need to add the Spring OAUTH and Spring JWT dependencies as well.
 
 To enable offline JWT validation the SAP XS Security Libraries need to be added as well. The latest version can be downloaded from the [Service Marketplace](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73555000100200004333&V=MAINT&TA=ACTUAL&PAGE=SEARCH/XS%20JAVA%201).
 
-* Create a *libs* folder inside the extracted *cf-shoppingcart* folder in step 1
+* Create *libs* folder inside the extracted *cf-shoppingcart* folder in step 1
 * Unzip the file downloaded from the service marketplace to the *libs* folder
 * Install SAP XS Security Libraries to your local maven repo by executing this command:
 
@@ -91,14 +91,14 @@ mvn clean install
 </dependency>
 ```
 
-#3. Configure NPM
+# 3. Configure NPM
 
 Execute the following command:
 ```
 npm config set @sap:registry https://npm.sap.com
 ```
 
-#4. Build the application
+# 4. Build the application
 
 ### Build Java App
 
@@ -116,7 +116,7 @@ npm install
 cd ..
 ```
 
-#5. Deploying Application Cloud Foundry
+# 5. Deploying Application Cloud Foundry
 Access your cloud foundry endpoint (depending upon the landscape your account was created in):
 ```
 cf api https://api.cf.eu10.hana.ondemand.com
@@ -176,3 +176,15 @@ cf map-route java-rule-sample-web cfapps.eu10.hana.ondemand.com -n [subdomain]-j
 
 #### Access your application
 URL: http://[subdomain]-java-rule-sample-web.cfapps.eu10.hana.ondemand.com
+
+## Authors
+Archana Shukla
+
+## Copyright and License
+Copyright (c) 2017 SAP SE. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. 
+You may obtain a copy of the License at > http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an 
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+

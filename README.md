@@ -18,11 +18,15 @@ You need to have the following:
 
 ## Repository Overview
 The available samples are of 2 types depending upon the folder containing them. There would be different setup process for each type:
-1. **apps** - It contains SAPUI5 applications that need to imported from WebIDE and deployed. **shoppingcart** application shows how to consume rule service in custom HTML5 application and **rulesmanager** application shows how to embed SAPUI5 Rules Builder control in your custom application. 
-2. **rulesprojects** - It contains sample business rules projects that shows rules capabilities through different use cases
+- **apps** - It contains SAPUI5 applications that need to imported from WebIDE and deployed to Neo environment. 
+  - **shoppingcart** application shows how to consume rule service in custom HTML5 application
+  - **rulesmanager** application shows how to embed SAPUI5 Rules Builder control in your custom application. 
+- **rulesprojects** - It contains sample business rules projects that shows rules capabilities through different use cases
+- **cf-apps** - It conatins **shoppingcart** SAPUI5 application that needs to be build and deployed in Cloud Foundry environment
+  - Go to the [README](https://github.com/SAP/cloud-businessrules-samples/blob/master/cf-apps/README.md) to know more 
 
 ## Getting Started
-1. Download the content from the git: https://github.com/SAP/cloud-businessrules-samples
+1. Download the content from the [git](https://github.com/SAP/cloud-businessrules-samples)
 2. Extract the content into local file system
 
 - From content in **apps** folder:
