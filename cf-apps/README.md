@@ -15,10 +15,10 @@ To make this sample application work, please make sure you have:
 
 ## Running the Application in Cloud Foundry Environment
 
-# 1. Download the Shopping Cart Application
+### 1. Download the Shopping Cart Application
 Download and extract the shopping cart application under *cf-apps* folder
 
-# 2. Adding required security libraries
+### 2. Adding required security libraries
 
 To secure the application we have to add Spring Security to the classpath. By configuring Spring Security in the application, Spring Boot automatically secures all HTTP endpoints with BASIC authentication. Since we want to use OAuth 2.0 together with [Java Web Tokens (JWT)](https://tools.ietf.org/html/rfc7519) instead, we need to add the Spring OAUTH and Spring JWT dependencies as well.
 
@@ -29,7 +29,7 @@ To enable offline JWT validation the SAP XS Security Libraries need to be added 
 * Install SAP XS Security Libraries to your local maven repo by executing this command:
 
 ```shell
-cd <unzipped-folder-location>
+cd cf-shoppingcart/libs
 mvn clean install
 ```
 ** Once the libraries are successfully installed, you will see the following dependencies are added to `pom.xml` file:
@@ -91,16 +91,16 @@ mvn clean install
 </dependency>
 ```
 
-# 3. Configure NPM
+### 3. Configure NPM
 
 Execute the following command:
 ```
 npm config set @sap:registry https://npm.sap.com
 ```
 
-# 4. Build the application
+### 4. Build the application
 
-### Build Java App
+#### Build Java App
 
 Execute the following command:
 ```shell
@@ -109,20 +109,20 @@ mvn clean install
 ```
 
 
-### Build Web App
+#### Build Web App
 ```
 cd java-rule-sample/web
 npm install
 cd ..
 ```
 
-# 5. Deploying Application Cloud Foundry
-Access your cloud foundry endpoint (depending upon the landscape your account was created in):
+### 5. Deploying Application Cloud Foundry
+#### Access your cloud foundry API endpoint 
 ```
 cf api https://api.cf.eu10.hana.ondemand.com
 ```
 
-Login to your account:
+#### Login to your account
 ```
 cf login
 ```
