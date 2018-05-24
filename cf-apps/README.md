@@ -16,15 +16,13 @@ To make this sample application work, please make sure you have:
 ## Running the Application in Cloud Foundry Environment
 
 ### 1. Download the Shopping Cart Application
-Download and extract the shopping cart application under *cf-apps* folder
+Download and extract the shopping cart application under **cf-apps** folder
 
 ### 2. Adding required security libraries
 
-To secure the application we have to add Spring Security to the classpath. By configuring Spring Security in the application, Spring Boot automatically secures all HTTP endpoints with BASIC authentication. Since we want to use OAuth 2.0 together with [Java Web Tokens (JWT)](https://tools.ietf.org/html/rfc7519) instead, we need to add the Spring OAUTH and Spring JWT dependencies as well.
+To secure the application we have to add Spring Security to the classpath. By configuring Spring Security in the application, Spring Boot automatically secures all HTTP endpoints with BASIC authentication. Since we want to use OAuth 2.0 together with [Java Web Tokens (JWT)](https://tools.ietf.org/html/rfc7519) instead, we need to add the Spring OAUTH and Spring JWT dependencies as well. To enable offline JWT validation the SAP XS Security Libraries need to be added as well. The latest version can be downloaded from the [Service Marketplace](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73555000100200004333&V=MAINT&TA=ACTUAL&PAGE=SEARCH/XS%20JAVA%201).
 
-To enable offline JWT validation the SAP XS Security Libraries need to be added as well. The latest version can be downloaded from the [Service Marketplace](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73555000100200004333&V=MAINT&TA=ACTUAL&PAGE=SEARCH/XS%20JAVA%201).
-
-* Create *libs* folder inside the extracted *cf-shoppingcart* folder in step 1
+* Create **libs** folder inside the extracted **cf-shoppingcart** folder in step 1
 * Unzip the file downloaded from the service marketplace to the *libs* folder
 * Install SAP XS Security Libraries to your local maven repo by executing this command:
 
@@ -32,7 +30,7 @@ To enable offline JWT validation the SAP XS Security Libraries need to be added 
 cd cf-shoppingcart/libs
 mvn clean install
 ```
-** Once the libraries are successfully installed, you will see the following dependencies are added to `pom.xml` file:
+* Once the libraries are successfully installed, you will see the following dependencies are added to `pom.xml` file:
 
 **Note:** You may need to adapt the version number in your `pom.xml` in case you are using a newer version of the SAP XS Security Libraries. You can get that version number from the downloaded libraries, and accordingly change them in `pom.xml` for all `groupIds` that starts-with `sap.com` respectively.
 
@@ -108,7 +106,6 @@ cd java-rule-sample/app
 mvn clean install
 ```
 
-
 #### Build Web App
 ```
 cd java-rule-sample/web
@@ -116,7 +113,7 @@ npm install
 cd ..
 ```
 
-### 5. Deploying Application Cloud Foundry
+### 5. Deploy application in Cloud Foundry
 #### Access your cloud foundry API endpoint 
 ```
 cf api https://api.cf.eu10.hana.ondemand.com
@@ -154,7 +151,7 @@ cd java-rule-sample
 cf push -f manifest-cf-factory.yml
 ```
 
-#### Assigning Roles
+#### Assign Business Rules Roles
 
 Assign the user with the following Roles
 
@@ -166,7 +163,7 @@ Assign the user with the following Roles
 
 Follow the [HowTo](https://jam4.sapjam.com/wiki/show/d2dgJlWR9IpwQsLOCmyJj9) JAM page for assigning the roles to a user
 
-#### Map Routes
+#### Map Routes to application
 
 Execute the following command in order to create a tenant-specific route for the application:
 
@@ -174,7 +171,7 @@ Execute the following command in order to create a tenant-specific route for the
 cf map-route java-rule-sample-web cfapps.eu10.hana.ondemand.com -n [subdomain]-java-rule-sample-web
 ```
 
-#### Access your application
+### 6. Access the application
 URL: http://[subdomain]-java-rule-sample-web.cfapps.eu10.hana.ondemand.com
 
 ## Authors
