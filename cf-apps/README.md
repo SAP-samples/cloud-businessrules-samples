@@ -101,14 +101,15 @@ npm config set @sap:registry https://npm.sap.com
 #### Build Java App
 
 Execute the following command:
-```shell
-cd java-rule-sample/app
+```
+cd cf-shoppingcart/app
 mvn clean install
+cd ..
 ```
 
 #### Build Web App
 ```
-cd java-rule-sample/web
+cd cf-shoppingcart/web
 npm install
 cd ..
 ```
@@ -147,7 +148,7 @@ cf create-service xsuaa application java-rule-sample-uaa -c ./security/xs-securi
 Ensure that you have assembled the application with Maven as described above.
 
 ```
-cd java-rule-sample
+cd cf-shoppingcart
 cf push -f manifest-cf-factory.yml
 ```
 
@@ -166,7 +167,7 @@ Follow the [HowTo](https://jam4.sapjam.com/wiki/show/d2dgJlWR9IpwQsLOCmyJj9) JAM
 #### Map Routes to application
 
 Execute the following command in order to create a tenant-specific route for the application:
-
+* Replace the `[subdomain]` with your cloud foundry subdomain
 ```
 cf map-route java-rule-sample-web cfapps.eu10.hana.ondemand.com -n [subdomain]-java-rule-sample-web
 ```
