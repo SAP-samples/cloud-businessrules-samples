@@ -1,0 +1,224 @@
+*&---------------------------------------------------------------------*
+*& Report ZVR_FLIGHTS_DEMO_SCENARIO
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT ZVR_FLIGHTS_DEMO_SCENARIO.
+
+TYPES : BEGIN OF ts_customer,
+          city      TYPE c LENGTH 25,
+          country   TYPE c LENGTH 3,
+          custtype  TYPE c LENGTH 1,
+          discount  TYPE c LENGTH 3,
+          email     TYPE c LENGTH 40,
+          form      TYPE c LENGTH 15,
+          id        TYPE c LENGTH 8,
+          langu     TYPE c LENGTH 1,
+          name      TYPE c LENGTH 25,
+          postbox   TYPE c LENGTH 10,
+          postcode  TYPE c LENGTH 10,
+          region    TYPE c LENGTH 3,
+          street    TYPE c LENGTH 30,
+          telephone TYPE c LENGTH 30,
+          webuser   TYPE c LENGTH 25,
+        END OF ts_customer.
+
+TYPES : BEGIN OF ts_booking,
+          agencynum  TYPE c LENGTH 8,
+          bookid     TYPE c LENGTH 8,
+          cancelled  TYPE c LENGTH 1,
+          carrid     TYPE c LENGTH 3,
+          class      TYPE c LENGTH 1,
+          connid     TYPE c LENGTH 4,
+          counter    TYPE c LENGTH 8,
+          customid   TYPE c LENGTH 8,
+          custtype   TYPE c LENGTH 1,
+          fldate     TYPE d,
+          forcurkey  TYPE c LENGTH 5,
+          invoice    TYPE c LENGTH 1,
+          loccurkey  TYPE c LENGTH 5,
+          order_date TYPE d,
+          passbirth  TYPE d,
+          passform   TYPE c LENGTH 15,
+          passname   TYPE c LENGTH 25,
+          reserved   TYPE c LENGTH 1,
+          smoker     TYPE c LENGTH 1,
+          wunit      TYPE c LENGTH 3,
+        END OF ts_booking.
+
+DATA : lr_data       TYPE REF TO data,
+       lt_name_value TYPE cl_fdt_brs_processor=>t_name_value,
+       ls_name_value LIKE LINE OF lt_name_value,
+       ls_cust       TYPE ts_customer,
+       ls_book       TYPE ts_booking.
+
+FIELD-SYMBOLS <la_any> TYPE ANY TABLE.
+
+TYPES : ty_carrid TYPE c LENGTH 3,
+        ty_connid TYPE c LENGTH 4.
+
+
+SELECTION-SCREEN BEGIN OF BLOCK b1 WITH FRAME TITLE TEXT-t01.
+PARAMETERS: pv_id   TYPE fdt_uuid LOWER CASE,
+            pv_rad1 RADIOBUTTON GROUP rad USER-COMMAND frad1 DEFAULT 'X',
+            pv_rad2 RADIOBUTTON GROUP rad,
+            pv_rad3 RADIOBUTTON GROUP rad.
+SELECTION-SCREEN END OF BLOCK b1.
+
+SELECTION-SCREEN BEGIN OF BLOCK b2 WITH FRAME TITLE TEXT-t02.
+
+PARAMETERS: p_carrid TYPE ty_carrid MODIF ID g1,
+            p_connid TYPE ty_connid MODIF ID g1.
+
+SELECTION-SCREEN END OF BLOCK b2.
+
+SELECTION-SCREEN BEGIN OF BLOCK b3 WITH FRAME TITLE TEXT-t03.
+
+PARAMETERS : p_ctype  TYPE c LENGTH 1 MODIF ID g2,
+             p_region TYPE c LENGTH 3 MODIF ID g2,
+             p_custid TYPE c LENGTH 8 MODIF ID g2.
+
+SELECTION-SCREEN END OF BLOCK b3.
+
+
+SELECTION-SCREEN BEGIN OF BLOCK b4 WITH FRAME TITLE TEXT-t05.
+PARAMETERS : p_ctype2 TYPE c LENGTH 1 MODIF ID g3,
+             p_bclass TYPE c LENGTH 1 MODIF ID g3,
+             p_fldate TYPE datum MODIF ID g3.
+SELECTION-SCREEN END OF BLOCK b4.
+
+AT SELECTION-SCREEN OUTPUT.
+
+  IF pv_rad1 = 'X'.
+    LOOP AT SCREEN.
+      IF screen-group1 = 'G1'.
+        screen-active = '1'.
+      ELSEIF screen-group1 = 'G2' OR screen-group1 = 'G3'.
+        screen-active = '0'.
+      ENDIF.
+      MODIFY SCREEN.
+    ENDLOOP.
+
+  ELSEIF pv_rad2 = 'X'.
+    LOOP AT SCREEN.
+      IF screen-group1 = 'G2'.
+        screen-active = '1'.
+      ELSEIF screen-group1 = 'G1' OR screen-group1 = 'G3'.
+        screen-active = '0'.
+      ENDIF.
+      MODIFY SCREEN.
+    ENDLOOP.
+
+  ELSEIF pv_rad3 = 'X'.
+    LOOP AT SCREEN.
+      IF screen-group1 = 'G3'.
+        screen-active = '1'.
+      ELSEIF screen-group1 = 'G1' OR screen-group1 = 'G2'.
+        screen-active = '0'.
+      ENDIF.
+      MODIFY SCREEN.
+    ENDLOOP.
+
+  ENDIF.
+
+START-OF-SELECTION.
+
+  DATA(lo_dsm) = cl_fdt_brs_processor=>get_instance( EXPORTING iv_function_id = pv_id ).
+
+  lo_dsm->get_data_object_reference( EXPORTING iv_data_object = '_V_RESULT'
+                                     IMPORTING er_data = lr_data ).
+
+  ASSIGN lr_data->* TO <la_any>.
+
+
+  IF pv_rad1 EQ 'X'.
+
+    DATA : lv_carrid TYPE ty_carrid,
+           lv_connid TYPE ty_connid.
+
+    lv_carrid = p_carrid.
+    lv_connid = p_connid.
+
+    ls_name_value-name = 'P_CARRID'.
+    GET REFERENCE OF lv_carrid INTO ls_name_value-value.
+    APPEND ls_name_value TO lt_name_value.
+
+    ls_name_value-name = 'P_CONNID'.
+    GET REFERENCE OF lv_connid INTO ls_name_value-value.
+    APPEND ls_name_value TO lt_name_value.
+
+    "Invoke
+    TRY.
+        lo_dsm->process( IMPORTING ea_result = <la_any>
+                            CHANGING  ct_name_value  = lt_name_value ).
+      CATCH  cx_fdt_input INTO DATA(lx_ip).
+        WRITE : lx_ip->if_message~get_text( ).
+      CATCH cx_fdt_processing INTO DATA(lx_process).
+        WRITE : lx_process->if_message~get_text( ).
+    ENDTRY.
+
+    DELETE ADJACENT DUPLICATES FROM <la_any>.
+
+    "Display
+    IF <la_any> IS NOT INITIAL.
+      cl_demo_output=>display( <la_any> ).
+    ENDIF.
+
+  ELSEIF pv_rad2 EQ 'X'.
+    ls_cust-custtype = p_ctype.
+    ls_cust-region = p_region.
+    ls_cust-id = p_custid.
+
+    ls_name_value-name = 'CUSTOMER'.
+    GET REFERENCE OF ls_cust INTO ls_name_value-value.
+    APPEND ls_name_value TO lt_name_value.
+
+    "Invoke
+    TRY.
+        lo_dsm->process( IMPORTING ea_result = <la_any>
+                            CHANGING  ct_name_value  = lt_name_value ).
+      CATCH  cx_fdt_input INTO lx_ip.
+        WRITE : lx_ip->if_message~get_text( ).
+      CATCH cx_fdt_processing INTO lx_process.
+        WRITE : lx_process->if_message~get_text( ).
+    ENDTRY.
+
+    DELETE ADJACENT DUPLICATES FROM <la_any>.
+
+    "Display
+    IF <la_any> IS NOT INITIAL.
+      cl_demo_output=>display( <la_any> ).
+    ENDIF.
+
+  ELSEIF pv_rad3 EQ 'X'.
+
+    ls_cust-custtype = p_ctype2.
+    ls_book-class = p_bclass.
+    ls_book-fldate = p_fldate.
+
+    ls_name_value-name = 'CUSTOMER'.
+    GET REFERENCE OF ls_cust INTO ls_name_value-value.
+    APPEND ls_name_value TO lt_name_value.
+
+    ls_name_value-name = 'BOOKING'.
+    GET REFERENCE OF ls_book INTO ls_name_value-value.
+    APPEND ls_name_value TO lt_name_value.
+
+    "Invoke
+    TRY.
+        lo_dsm->process( IMPORTING ea_result = <la_any>
+                            CHANGING  ct_name_value  = lt_name_value ).
+      CATCH  cx_fdt_input INTO lx_ip.
+        WRITE : lx_ip->if_message~get_text( ).
+      CATCH cx_fdt_processing INTO lx_process.
+        WRITE : lx_process->if_message~get_text( ).
+    ENDTRY.
+
+    DELETE ADJACENT DUPLICATES FROM <la_any>.
+
+    "Display
+    IF <la_any> IS NOT INITIAL.
+      cl_demo_output=>display( <la_any> ).
+    ENDIF.
+
+  ENDIF.
