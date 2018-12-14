@@ -1,0 +1,17 @@
+_schema-version: "3.1"
+ID: com.sap.brms.hdi.util.extension
+extends: com.sap.brms.hdi.util
+
+resources:
+  - name: hdi-util-parameters
+    parameters:
+        config:
+            user:
+            password: 
+            url: ''
+            tags: 'xsa-system'
+            cloud-host: ''
+            cloud-user:
+            cloud-password: 
+            proxy-host: 'proxy.wdf.sap.corp'
+            proxy-port: '8080'
