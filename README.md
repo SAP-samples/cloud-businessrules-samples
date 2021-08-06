@@ -1,6 +1,5 @@
-# SAP Cloud Platform Business Rules Sample Projects and Applications
-SAP Cloud Platform Business Rules enables line of business users, application developers to automate decisions in simple human friendly rule language and integrate these decisions via APIs with their cloud applications. 
-You can use these sample applications and rule projects as reference content to learn more about how-to build and consume business rules in neo and cloud foundry environments.
+# Business Rules capability of SAP Workflow Management Sample Projects and Applications
+Business Rules capability of SAP Workflow Management enables line of business users, application developers to automate decisions in simple human friendly rule language and integrate these decisions via APIs with their cloud applications. You can use these sample applications and rule projects as reference content to learn more about how-to build and consume business rules in neo and cloud foundry environments.
 
 ## Solution Diagram
 This diagram shows how you can consume business rules service from workflow, cloud integration and other SAP Cloud solutions. 
@@ -28,7 +27,7 @@ The available samples are of 2 types depending upon the folder containing them. 
   - **shoppingcart** application shows how to consume rule service in custom HTML5 application
   - **rulesmanager** application shows how to embed SAPUI5 Rules Builder control in your custom application. 
 - **rulesprojects** - It contains sample business rules projects that shows rules capabilities through different use cases
-- **cf-apps** - It conatins **shoppingcart** SAPUI5 application that needs to be build and deployed in Cloud Foundry environment
+- **cf-apps** - It contains applications that helps you to understand consumptions of business rules in Cloud Foundry environment
   - Go to the [README](https://github.com/SAP/cloud-businessrules-samples/blob/master/cf-apps/README.md) to know more 
 
 ## Getting Started with Business Rules in Neo Environment
@@ -43,13 +42,8 @@ The available samples are of 2 types depending upon the folder containing them. 
 * Download the content from [git](https://github.com/SAP/cloud-businessrules-samples/tree/master/cf-apps)
 * Follow the instructions in [README](https://github.com/SAP/cloud-businessrules-samples/blob/master/cf-apps/README.md)
 
-## Authors
-Archana Shukla
+## How to obtain support
+The project is provided "as-is", with no expected changes or support.
 
-## Copyright and License
-Copyright (c) 2017 SAP SE. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. 
-You may obtain a copy of the License at > http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an 
-"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+## License
+Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved. This file is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](https://github.com/SAP-samples/fsm-extension-sample/blob/master/LICENSE) file
