@@ -189,8 +189,8 @@ cf map-route java-rule-sample-web cfapps.eu10.hana.ondemand.com -n [subdomain]-j
 ### 6. Access the application
 URL: http://[subdomain]-java-rule-sample-web.cfapps.eu10.hana.ondemand.com
 
-## Authors
-Archana Shukla
+## How to obtain support
+The project is provided "as-is", with no expected changes or support.
 
 ## License
 Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved. This file is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](https://github.com/SAP-samples/fsm-extension-sample/blob/master/LICENSE) file
