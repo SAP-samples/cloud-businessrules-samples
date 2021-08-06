@@ -2,23 +2,23 @@
 Business Rules capability of SAP Workflow Management enables line of business users, application developers to automate decisions in simple human friendly rule language and integrate these decisions via APIs with their cloud applications. You can use these sample applications and rule projects as reference content to learn more about how-to build and consume business rules in neo and cloud foundry environments.
 
 ## Solution Diagram
-This diagram shows how you can consume business rules service from workflow, cloud integration and other SAP Cloud solutions. 
-![Solution Diagram](https://github.com/SAP/cloud-businessrules-samples/blob/master/images/BusinessRules_SolutionDiagram.png)
+This diagram shows how you can consume business rules service from workflow, cloud integration and other SAP Business Applications. 
+![Solution Diagram](https://github.com/SAP/cloud-businessrules-samples/blob/master/images/BusinessRules_SolutionDiagram_2.png)
 
-Beside these, there are many other services which can consume SAP Cloud Platform Business Rules. Below diagram shows a rich list of various consumption models:
-![Consumption Models](https://github.com/SAP/cloud-businessrules-samples/blob/master/images/BusinessRules_ConsumptionPatterns.png)
+Beside these, there are many other services which can consume Business Rules. Below diagram shows a rich list of various consumption models:
+![Consumption Models](https://github.com/SAP/cloud-businessrules-samples/blob/master/images/BusinessRules_ConsumptionPatterns_2.png)
 
 ## Prerequisites For Neo Environment
 You need to have the following:
-- SAP Cloud Platform (Neo) account with an active subscription to Business Rules service.
+- SAP BTP (Neo) account with an active subscription to Business Rules service.
   - Refer [here](https://blogs.sap.com/2017/04/26/sap-cloud-platform-business-rules-try-it-yourself/) for information on accessing Business Rules in Neo trial account.
 - **RuleSuperUser** role for Runtime and Repository operations.
-- **Developer** role to create and deploy SAPUI5 applications in SAP Cloud Platform.
-- SAP WebIDE Full-Stack service enabled in SAP Cloud Platform.
+- **Developer** role to create and deploy SAPUI5 applications in SAP BTP.
+- SAP Business Application Studio enabled in SAP BTP.
 
 ## Prerequisites For Cloud Foundry Environment
 You need to have the following:
-- SAP Cloud Platform Cloud Foundry account with subscription to Business Rules application. 
+- SAP BTP Cloud Foundry account with subscription to Business Rules application. 
   - Refer [here](https://blogs.sap.com/2018/03/29/quick-start-guide-to-sap-business-rules-service-in-cloud-foundry/) for information on accessing Business Rules in Cound Foundry trial account.
 
 ## Folders Overview
