@@ -8,10 +8,10 @@ These *Business Rules Samples* contains a collection of business rules applicati
 ### List of sample applications
 |Application|Scenario|Scenario Description|
 |---|---|---|
-|Custom|[run-businessrules-sample.zip](https://github.com/SAP-samples/cloud-businessrules-samples/blob/master/cf-apps/run-businessrules-sample.zip)|helps you understand how to invoke business rules from custom application|
-|Embedded|[cf_rulesmanager.zip](https://github.com/SAP-samples/cloud-businessrules-samples/blob/master/cf-apps/cf_rulesmanager.zip)|See how to embed business rules in your custom application. These custom application can be given to business users to modify rules|
-|Shopping Cart Application|[cf-shoppingcart.zip](https://github.com/SAP-samples/cloud-businessrules-samples/blob/master/cf-apps/cf-shoppingcart.zip)|Use this sample shopping cart to understand how discount rules are consumed from a shopping cart application. Follow the section below to setup|
-|Rule Editor (DEPRECATED)|[cf-businessruleseditor.zip](https://github.com/SAP-samples/cloud-businessrules-samples/blob/master/cf-apps/cf-businessruleseditor.zip)|This is no more to be used. It was an old way to setup business rules in Neo environment |
+|Custom|[run-businessrules-sample](https://github.com/SAP-samples/cloud-businessrules-samples/blob/master/cf-apps/run-businessrules-sample.zip)|helps you understand how to invoke business rules from custom application|
+|Embedded|[cf_rulesmanager](https://github.com/SAP-samples/cloud-businessrules-samples/blob/master/cf-apps/cf_rulesmanager.zip)|See how to embed business rules in your custom application. These custom application can be given to business users to modify rules|
+|Shopping Cart Application|[cf-shoppingcart](https://github.com/SAP-samples/cloud-businessrules-samples/blob/master/cf-apps/cf-shoppingcart.zip)|Use this sample shopping cart to understand how discount rules are consumed from a shopping cart application. Follow the section below to setup|
+|Rule Editor (DEPRECATED)|[cf-businessruleseditor](https://github.com/SAP-samples/cloud-businessrules-samples/blob/master/cf-apps/cf-businessruleseditor.zip)|This is no more to be used. It was an old way to setup business rules in Neo environment |
 
 ## Setting up Shopping Cart Sample Application
 ### Prerequisites
