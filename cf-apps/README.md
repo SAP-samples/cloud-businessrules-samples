@@ -1,6 +1,20 @@
-Business Rule in Cloud Foundry Sample Application
-==================================================
-## Prerequisites
+
+# Business Rule Sample Applications
+## Description
+[Business Rules](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-Workflow.df696e5a-d973-4ecd-8d8d-532d60aa1921.html) allows you to automate and flexibly adapt decision logic with no application development. Users can model business rules and formulas in tabular, spreadsheet-like decision tables. A straightforward, Web-based business rules editor helps users manage business rule changes.
+
+These *Business Rules Samples* contains a collection of business rules applications to demonstrate the consumption of Business Rules in the context of extending the standard decisions. They are intended to be used as a reference content for the development of decision-based applications.
+
+### List of sample applications
+|Application|Scenario|Scenario Description|
+|---|---|---|
+|Custom|[run-businessrules-sample.zip](https://github.com/SAP-samples/cloud-businessrules-samples/blob/master/cf-apps/run-businessrules-sample.zip)|helps you understand how to invoke business rules from custom application|
+|Embedded|[cf_rulesmanager.zip](https://github.com/SAP-samples/cloud-businessrules-samples/blob/master/cf-apps/cf_rulesmanager.zip)|See how to embed business rules in your custom application. These custom application can be given to business users to modify rules|
+|Shopping Cart Application|[cf-shoppingcart.zip](https://github.com/SAP-samples/cloud-businessrules-samples/blob/master/cf-apps/cf-shoppingcart.zip)|Use this sample shopping cart to understand how discount rules are consumed from a shopping cart application. Follow the section below to setup|
+|Rule Editor (DEPRECATED)|[cf-businessruleseditor.zip](https://github.com/SAP-samples/cloud-businessrules-samples/blob/master/cf-apps/cf-businessruleseditor.zip)|This is no more to be used. It was an old way to setup business rules in Neo environment |
+
+## Setting up Shopping Cart Sample Application
+### Prerequisites
 To make this sample application work, please make sure you have:
 
 - An account on SAP Cloud Platform.
