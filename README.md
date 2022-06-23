@@ -1,3 +1,5 @@
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-businessrules-samples)](https://api.reuse.software/info/github.com/SAP-samples/cloud-businessrules-samples)
+
 # Business Rules capability of SAP Workflow Management Sample Projects and Applications
 Business Rules capability of SAP Workflow Management enables line of business users, application developers to automate decisions in simple human friendly rule language and integrate these decisions via APIs with their cloud applications. You can use these sample applications and rule projects as reference content to learn more about how-to build and consume business rules in neo and cloud foundry environments.
 
