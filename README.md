@@ -1,3 +1,10 @@
+## Deprecation Notice
+
+This public repository is read-only and no longer maintained.
+
+![](https://img.shields.io/badge/STATUS-NOT%20CURRENTLY%20MAINTAINED-red.svg?longCache=true&style=flat)
+
+---
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-businessrules-samples)](https://api.reuse.software/info/github.com/SAP-samples/cloud-businessrules-samples)
 
 # Business Rules capability of SAP Workflow Management Sample Projects and Applications
